@@ -56,10 +56,10 @@ let package = Package(
                 .linkedFramework("CoreMedia")
             ]
         ), 
-    	.binaryTarget(name: "libpyobjus", url: "https://github.com/PythonSwiftLink/KivyCore/releases/download/999.0.1/libpyobjus.zip", checksum: "libSDL2_image"), 
-    	.binaryTarget(name: "libSDL2_mixer", url: "https://github.com/PythonSwiftLink/KivyCore/releases/download/999.0.1/libSDL2_mixer.zip", checksum: "libSDL2_ttf"), 
-    	.binaryTarget(name: "libpillow", url: "https://github.com/PythonSwiftLink/KivyCore/releases/download/999.0.1/libpillow.zip", checksum: "libpng16"), 
-    	.binaryTarget(name: "libfreetype", url: "https://github.com/PythonSwiftLink/KivyCore/releases/download/999.0.1/libfreetype.zip", checksum: "libios"), 
-    	.binaryTarget(name: "libjpeg", url: "https://github.com/PythonSwiftLink/KivyCore/releases/download/999.0.1/libjpeg.zip", checksum: "libkivy"), 
+    	.binaryTarget(name: "libjpeg", url: "https://github.com/PythonSwiftLink/KivyCore/releases/download/310.99.1/libjpeg.zip", checksum: "libkivy"), 
+    	.binaryTarget(name: "libSDL2_mixer", url: "https://github.com/PythonSwiftLink/KivyCore/releases/download/310.99.1/libSDL2_mixer.zip", checksum: "libSDL2_ttf"), 
+    	.binaryTarget(name: "libpillow", url: "https://github.com/PythonSwiftLink/KivyCore/releases/download/310.99.1/libpillow.zip", checksum: "libpng16"), 
+    	.binaryTarget(name: "libpyobjus", url: "https://github.com/PythonSwiftLink/KivyCore/releases/download/310.99.1/libpyobjus.zip", checksum: "libSDL2_image"), 
+    	.binaryTarget(name: "libfreetype", url: "https://github.com/PythonSwiftLink/KivyCore/releases/download/310.99.1/libfreetype.zip", checksum: "libios"), 
     ]
 )
