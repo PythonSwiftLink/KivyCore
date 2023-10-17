@@ -1,6 +1,5 @@
 
 // swift-tools-version: 5.8
-// The swift-tools-version declares the minimum version of Swift required to build this package.
 
 import PackageDescription
 
@@ -8,65 +7,67 @@ let package = Package(
     name: "KivyCore", 
     platforms: [.iOS(.v13)], 
     products: [
-        .library(
-            name: "KivyCore", 
-            targets: [
-                "KivyCore"
-            ]), 
+    	.library(
+        	name: "KivyCore", 
+        	targets: [
+        		"KivyCore"
+        	]
+    	), 
     ], 
     dependencies: [
-        .package(url: "https://github.com/PythonSwiftLink/KivyPythonCore", from: .init(310, 0, 0)), 
+    	.package(url: "https://github.com/PythonSwiftLink/KivyPythonCore", .upToNextMajor(from: "310.0.0"))
     ], 
     targets: [
-        .target(
-            name: "KivyCore", 
-            dependencies: [
-                .product(name: "PythonCore", package: "KivyPythonCore"), 
-                "libfreetype", 
-                "libios", 
-                "libjpeg", 
-                "libkivy", 
-                "libpillow", 
-                "libpng16", 
-                "libpyobjus", 
-                "libSDL2_image", 
-                "libSDL2_mixer", 
-                "libSDL2_ttf", 
-                "libSDL2", 
-            ], 
-            linkerSettings: [
-                // frameworks for sdl
-                .linkedFramework("OpenGLES"), 
-                .linkedFramework("Metal"), 
-                .linkedFramework("AVFoundation"), 
-                .linkedFramework("ImageIO"), 
-                .linkedFramework("CoreHaptics"), 
-                .linkedFramework("MobileCoreServices"), 
-                .linkedFramework("MessageUI"), 
-                .linkedFramework("WebKit"), 
-                .linkedFramework("Accelerate"), 
-                .linkedFramework("CoreGraphics"), 
-                .linkedFramework("CoreVideo"), 
-                .linkedFramework("CoreAudio"), 
-                .linkedFramework("AudioToolbox"), 
-                .linkedFramework("GameController"), 
-                .linkedFramework("Photos"), 
-                .linkedFramework("UIKit"), 
-                .linkedFramework("QuartzCore"), 
-                .linkedFramework("CoreMotion"), 
-                .linkedFramework("CoreMedia")
-            ]
-        ), 
-    	.binaryTarget(name: "libios", url: "https://github.com/PythonSwiftLink/KivyCore/releases/download/310.999.4/libios.zip", checksum: "c35854f7f3aa08a6dd4a1fdf9528f9f8d0e28d0f57fd8fc3f21fe3073074ab45")
-    	.binaryTarget(name: "libfreetype", url: "https://github.com/PythonSwiftLink/KivyCore/releases/download/310.999.4/libfreetype.zip", checksum: "9d400e9c14106cab8015180a179afc3044fde6ddd6a3d31114718cbfb5d398f8")
-    	.binaryTarget(name: "libpng16", url: "https://github.com/PythonSwiftLink/KivyCore/releases/download/310.999.4/libpng16.zip", checksum: "285bb36d02596e43da224911698b81a2734201767020a35fd3f86e96543a1f8a")
-    	.binaryTarget(name: "libpillow", url: "https://github.com/PythonSwiftLink/KivyCore/releases/download/310.999.4/libpillow.zip", checksum: "4055c188785c7def5a27dc8b74da5615188ea6e8503d35adfac5eda9e6bea875")
-    	.binaryTarget(name: "libkivy", url: "https://github.com/PythonSwiftLink/KivyCore/releases/download/310.999.4/libkivy.zip", checksum: "4833e5528f7d5895e63cadca453709baf83d2e5ed42ac3d0ea34771a5eb58107")
-    	.binaryTarget(name: "libjpeg", url: "https://github.com/PythonSwiftLink/KivyCore/releases/download/310.999.4/libjpeg.zip", checksum: "672c85d13a71612ab27921f565a932e0907eef88a2711cd215967f6102611dbc")
-    	.binaryTarget(name: "libpyobjus", url: "https://github.com/PythonSwiftLink/KivyCore/releases/download/310.999.4/libpyobjus.zip", checksum: "ce4d877c3ac083095a1ee459290447537449c37f20d329644acfe93c4306e1da")
-    	.binaryTarget(name: "libSDL2_mixer", url: "https://github.com/PythonSwiftLink/KivyCore/releases/download/310.999.4/libSDL2_mixer.zip", checksum: "d3633c9020c15fcb0ccfede42f2b16551375e05dae53fb2daf7808ada9cf1051")
-    	.binaryTarget(name: "libSDL2_ttf", url: "https://github.com/PythonSwiftLink/KivyCore/releases/download/310.999.4/libSDL2_ttf.zip", checksum: "ba24685f778c8cbd3a5086045f83b42179e583727751e99378b009d80e029e88")
-    	.binaryTarget(name: "libSDL2_image", url: "https://github.com/PythonSwiftLink/KivyCore/releases/download/310.999.4/libSDL2_image.zip", checksum: "39fcda1a7158a68c920cd952da8319f91356d132ef8bb1ff21c095da650284e2")
-    	.binaryTarget(name: "libSDL2", url: "https://github.com/PythonSwiftLink/KivyCore/releases/download/310.999.4/libSDL2.zip", checksum: "eb9582c78259bca1f50b123aed7af032bf1349e8d937585a2c970f13337fad77")
+    	.target(
+        	name: "KivyCore", 
+        	dependencies: [
+        		.product(name: "PythonCore", package: "KivyPythonCore"), 
+        		"libios", 
+        		"libfreetype", 
+        		"libpng16", 
+        		"libpillow", 
+        		"libkivy", 
+        		"libjpeg", 
+        		"libpyobjus", 
+        		"libSDL2_mixer", 
+        		"libSDL2_ttf", 
+        		"libSDL2_image", 
+        		"libSDL2", 
+        	], 
+        	resources: [
+        	], 
+        	linkerSettings: [
+        		.linkedFramework("OpenGLES"), 
+        		.linkedFramework("Metal"), 
+        		.linkedFramework("AVFoundation"), 
+        		.linkedFramework("ImageIO"), 
+        		.linkedFramework("CoreHaptics"), 
+        		.linkedFramework("MobileCoreServices"), 
+        		.linkedFramework("MessageUI"), 
+        		.linkedFramework("WebKit"), 
+        		.linkedFramework("Accelerate"), 
+        		.linkedFramework("CoreGraphics"), 
+        		.linkedFramework("CoreVideo"), 
+        		.linkedFramework("CoreAudio"), 
+        		.linkedFramework("AudioToolbox"), 
+        		.linkedFramework("GameController"), 
+        		.linkedFramework("Photos"), 
+        		.linkedFramework("UIKit"), 
+        		.linkedFramework("QuartzCore"), 
+        		.linkedFramework("CoreMotion"), 
+        		.linkedFramework("CoreMedia"), 
+        	]
+    	), 
+    	.binaryTarget(name: "libios", url: "https://github.com/PythonSwiftLink/KivyCore/releases/download/310.999.0/libios.zip", checksum: "7a75048a199e29191ca9c1a68fbcaa2a356f91ef3296276c1b451be45c3c573c")
+    	.binaryTarget(name: "libfreetype", url: "https://github.com/PythonSwiftLink/KivyCore/releases/download/310.999.0/libfreetype.zip", checksum: "c3f2b3dac18f6b8666462079abd5d4d490221cf353a887bc8ef08565ffd864c5")
+    	.binaryTarget(name: "libpng16", url: "https://github.com/PythonSwiftLink/KivyCore/releases/download/310.999.0/libpng16.zip", checksum: "4f4c4d22d3e41d31a846aaa6ca579035d3660f1cf3b54c49d86eb6d138503f98")
+    	.binaryTarget(name: "libpillow", url: "https://github.com/PythonSwiftLink/KivyCore/releases/download/310.999.0/libpillow.zip", checksum: "cbb2e0ed5822976757d48ad0d8eab74a1952731f4761385f4df82333eead99d6")
+    	.binaryTarget(name: "libkivy", url: "https://github.com/PythonSwiftLink/KivyCore/releases/download/310.999.0/libkivy.zip", checksum: "1f36ad3d4efc557b980474fece9b30dde954db57f17c8d143864d2dc8a23c708")
+    	.binaryTarget(name: "libjpeg", url: "https://github.com/PythonSwiftLink/KivyCore/releases/download/310.999.0/libjpeg.zip", checksum: "d693b57762c9ed456f433c9f16b99e2ee46b087a4355d631ee548b52b5011e79")
+    	.binaryTarget(name: "libpyobjus", url: "https://github.com/PythonSwiftLink/KivyCore/releases/download/310.999.0/libpyobjus.zip", checksum: "12751f22dceff490ae88be6d0501a6069dbc09df40a773c46151d957c235fcbb")
+    	.binaryTarget(name: "libSDL2_mixer", url: "https://github.com/PythonSwiftLink/KivyCore/releases/download/310.999.0/libSDL2_mixer.zip", checksum: "6b49d2bdf97caa5da51a9bea895b4a1c9cd8efa0f17ed690fc99ca2f570443e6")
+    	.binaryTarget(name: "libSDL2_ttf", url: "https://github.com/PythonSwiftLink/KivyCore/releases/download/310.999.0/libSDL2_ttf.zip", checksum: "a0cc3ab5f45e53e201e7371e019a2caf5c3e6a3305825c1d31f635fccb1c1fc9")
+    	.binaryTarget(name: "libSDL2_image", url: "https://github.com/PythonSwiftLink/KivyCore/releases/download/310.999.0/libSDL2_image.zip", checksum: "d4e7a06082153f0e2435580671efb59cfaa210734422e913067e84ca7c7de1b9")
+    	.binaryTarget(name: "libSDL2", url: "https://github.com/PythonSwiftLink/KivyCore/releases/download/310.999.0/libSDL2.zip", checksum: "e688713e375a6e939d2cbc0adef4d91922d700330b3f044ba83d7ac81b286525")
     ]
 )
